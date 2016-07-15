@@ -1,0 +1,5 @@
+LineLength:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
