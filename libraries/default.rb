@@ -11,6 +11,8 @@ module AwsKmsCookbook
     property :crypt_folder, String, default: '/etc/chef/crypt'
     property :decrypt_folder, String, default: '/etc/chef/private'
     property :aws_region, String, default: 'eu-west-1'
+    # PLEASE PLEASE PLEASE dont use this, its a terrible idea and is just for testing.
+    # Use IAM roles!
     property :aws_access_key_id, String, default: nil
     property :aws_secret_access_key, String, default: nil
     property :aws_security_token, String, default: nil
@@ -27,11 +29,11 @@ module AwsKmsCookbook
 
       log 'setting up the aws client'
       kms = init_aws_client(
-		      	aws_region, 
-		      	aws_access_key_id, 
-		      	aws_secret_access_key,
-		      	aws_security_token
-			)
+        aws_region,
+        aws_access_key_id,
+        aws_secret_access_key,
+        aws_security_token
+      )
 
       log 'decrypting files'
       Dir.glob("#{crypt_folder}/*.crypt").each do |file|
