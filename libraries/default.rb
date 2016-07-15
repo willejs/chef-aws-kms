@@ -11,6 +11,9 @@ module AwsKmsCookbook
     property :crypt_folder, String, default: '/etc/chef/crypt'
     property :decrypt_folder, String, default: '/etc/chef/private'
     property :aws_region, String, default: 'eu-west-1'
+    property :aws_access_key_id, String, default: nil
+    property :aws_secret_access_key, String, default: nil
+    property :aws_security_token, String, default: nil
 
     action :decrypt do
       Chef::Log.info('installing the aws-sdk gem')
@@ -25,9 +28,9 @@ module AwsKmsCookbook
       log 'setting up the aws client'
       kms = init_aws_client(
 		      	aws_region, 
-		      	node['aws-kms']['aws_access_key_id'], 
-		      	node['aws-kms']['aws_secret_access_key'],
-		      	node['aws-kms']['aws_security_token']
+		      	aws_access_key_id, 
+		      	aws_secret_access_key,
+		      	aws_security_token
 			)
 
       log 'decrypting files'
