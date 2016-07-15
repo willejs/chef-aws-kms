@@ -1,16 +1,6 @@
 module AwsKmsCookbook
   # helper methods for custom resource
   module AWSKmsHelpers
-    def require_aws_sdk
-      chef_gem 'aws-sdk' do
-        version aws_sdk_version
-        compile_time true
-        action :install
-      end
-
-      require 'aws-sdk'
-    end
-
     def init_aws_client(aws_region)
       # support session tokens
       if ENV['AWS_SECURITY_TOKEN']

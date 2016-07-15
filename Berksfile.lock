@@ -8,3 +8,4 @@ DEPENDENCIES
 GRAPH
   aws-kms (0.0.1)
   custom_resource_test (0.0.1)
+    aws-kms (>= 0.0.0)

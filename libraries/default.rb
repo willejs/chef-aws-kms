@@ -2,6 +2,7 @@ module AwsKmsCookbook
   # Create a class and define the openvpn_server resource in this library
   class AwsKms < Chef::Resource
     require_relative 'helpers'
+    include AwsKmsCookbook::AWSKmsHelpers
 
     resource_name :aws_kms_decrypt
 
@@ -12,7 +13,15 @@ module AwsKmsCookbook
     property :aws_region, String, default: 'eu-west-1'
 
     action :decrypt do
-      require_aws_sdk
+
+      chef_gem 'aws-sdk' do
+        #version aws_sdk_version
+        compile_time true
+        action :install
+      end
+
+      require 'aws-sdk'
+
       kms = init_aws_client(aws_region)
 
       Dir.glob("#{crypt_folder}/*.crypt").each do |file|
