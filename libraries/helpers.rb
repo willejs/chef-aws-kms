@@ -1,17 +1,19 @@
 module AwsKmsCookbook
   # helper methods for custom resource
   module AWSKmsHelpers
-    def init_aws_client(aws_region)
+    def init_aws_client(aws_region, access_key_id, secret_access_key, aws_security_token)
       # support session tokens
-      if ENV['AWS_SECURITY_TOKEN']
+      if ENV['AWS_SECURITY_TOKEN'] || aws_security_token
+        Chef::Log.info('using sec token')
         credentials = Aws::Credentials.new(
-          ENV['AWS_ACCESS_KEY_ID'],
-          ENV['AWS_SECRET_ACCESS_KEY'],
-          ENV['AWS_SECURITY_TOKEN']
+          ENV['AWS_ACCESS_KEY_ID'] || access_key_id,
+          ENV['AWS_SECRET_ACCESS_KEY'] || secret_access_key,
+          ENV['AWS_SECURITY_TOKEN'] || aws_security_token
         )
         # TODO: handle exceptions here.
         kms = Aws::KMS::Client.new(region: aws_region, credentials: credentials)
       else
+        Chef::Log.info('not using sec token')
         kms = Aws::KMS::Client.new(region: aws_region)
       end
 

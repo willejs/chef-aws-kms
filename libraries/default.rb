@@ -13,23 +13,30 @@ module AwsKmsCookbook
     property :aws_region, String, default: 'eu-west-1'
 
     action :decrypt do
+      Chef::Log.info('installing the aws-sdk gem')
 
       chef_gem 'aws-sdk' do
-        #version aws_sdk_version
         compile_time true
         action :install
       end
 
       require 'aws-sdk'
 
-      kms = init_aws_client(aws_region)
+      log 'setting up the aws client'
+      kms = init_aws_client(
+		      	aws_region, 
+		      	node['aws-kms']['aws_access_key_id'], 
+		      	node['aws-kms']['aws_secret_access_key'],
+		      	node['aws-kms']['aws_security_token']
+			)
 
+      log 'decrypting files'
       Dir.glob("#{crypt_folder}/*.crypt").each do |file|
         log "processing encrypted file: #{file}"
         decrypted_file = decrypt_file(file, kms)
 
         log 'writing out decrypted data'
-        output_file = "#{decrypt_folder}/#{file.sub('./', '').chomp('.crypt')}"
+        output_file = "#{decrypt_folder}/#{file.split('/')[-1].chomp('.crypt')}"
 
         file output_file do
           action :create
