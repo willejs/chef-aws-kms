@@ -1,1 +1,5 @@
-cookbook 'aws-kms', path: '../../../'
+metadata
+
+source 'https://supermarket.chef.io'
+
+cookbook 'aws-kms', path: '../../../../'

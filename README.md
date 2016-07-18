@@ -39,8 +39,10 @@ end
 
 ### Properties
 
-- `crypt_folder` - Where your collection of .crypt folders are stored, this could be in a cookbook, or baked into your ec2 image, or dropped on the box some other way
-- `decrypt_folder` - The location to decrypt the files to 
+- `crypt_folder` - Where your collection of .crypt folders are stored, this could be in a cookbook, or baked into your ec2 image, or dropped on the box some other way. String.
+- `manage_crypt_folder` - Create and ensure permissions on folder. Boolean
+- `decrypt_folder` - The location to decrypt the files to. String
+- `manage_decrypt_folder` - Create and ensure permissions on folder. Boolean
 
 ## Tests
 

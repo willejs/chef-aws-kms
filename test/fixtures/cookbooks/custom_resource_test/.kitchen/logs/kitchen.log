@@ -1,0 +1,29 @@
+I, [2016-07-18T10:41:24.786439 #66645]  INFO -- Kitchen: -----> Starting Kitchen (v1.7.3)
+E, [2016-07-18T10:41:24.786769 #66645] ERROR -- Kitchen: ------Exception-------
+E, [2016-07-18T10:41:24.786802 #66645] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2016-07-18T10:41:24.786821 #66645] ERROR -- Kitchen: Message: Kitchen YAML file /Users/will/repos/chef-aws-kms/test/fixtures/cookbooks/custom_resource_test/.kitchen.yml does not exist.
+E, [2016-07-18T10:41:24.786841 #66645] ERROR -- Kitchen: ------Backtrace-------
+E, [2016-07-18T10:41:24.786855 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/loader/yaml.rb:74:in `read'
+E, [2016-07-18T10:41:24.786897 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/config.rb:149:in `data'
+E, [2016-07-18T10:41:24.786917 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/config.rb:128:in `suites'
+E, [2016-07-18T10:41:24.786930 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/config.rb:179:in `filter_instances'
+E, [2016-07-18T10:41:24.786942 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/config.rb:138:in `build_instances'
+E, [2016-07-18T10:41:24.786954 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/config.rb:114:in `instances'
+E, [2016-07-18T10:41:24.786967 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/command.rb:115:in `filtered_instances'
+E, [2016-07-18T10:41:24.786979 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/command.rb:145:in `parse_subcommand'
+E, [2016-07-18T10:41:24.786993 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/command/action.rb:38:in `block in call'
+E, [2016-07-18T10:41:24.787012 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2016-07-18T10:41:24.787032 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/command/action.rb:37:in `call'
+E, [2016-07-18T10:41:24.787064 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/cli.rb:56:in `perform'
+E, [2016-07-18T10:41:24.787083 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/cli.rb:180:in `block (2 levels) in <class:CLI>'
+E, [2016-07-18T10:41:24.787103 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2016-07-18T10:41:24.787124 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2016-07-18T10:41:24.787173 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/cli.rb:321:in `invoke_task'
+E, [2016-07-18T10:41:24.787196 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2016-07-18T10:41:24.787216 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2016-07-18T10:41:24.787236 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/bin/kitchen:13:in `block in <top (required)>'
+E, [2016-07-18T10:41:24.787257 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/lib/kitchen/errors.rb:154:in `with_friendly_errors'
+E, [2016-07-18T10:41:24.787277 #66645] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.7.3/bin/kitchen:13:in `<top (required)>'
+E, [2016-07-18T10:41:24.787305 #66645] ERROR -- Kitchen: /usr/local/bin/kitchen:17:in `load'
+E, [2016-07-18T10:41:24.787324 #66645] ERROR -- Kitchen: /usr/local/bin/kitchen:17:in `<main>'
+E, [2016-07-18T10:41:24.787358 #66645] ERROR -- Kitchen: ----------------------
