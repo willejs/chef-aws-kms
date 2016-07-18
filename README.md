@@ -16,7 +16,7 @@ KMS enables you to create a private key in amazon, and control access to it. You
 
 Therefore, you can:
   - Encrypt all your data into files using a key
-  - Bake the files into your amazon AMIs (or drop them off) and make sure they are owned by root...
+  - Bake the files into your amazon AMIs (or drop them off via scp, user data, code deployment etc) and make sure they are owned by root...
   - Boot instances with an IAM role that can access a specific key to decrypt the files
   - Run chef to read all the files, decrypt them, and put them in a safe place on disk.
 
