@@ -1,6 +1,6 @@
 module AwsKmsCookbook
   # helper methods for custom resource
-  module AWSKmsHelpers
+  module AwsKmsHelpers
     def init_aws_client(aws_region, access_key_id, secret_access_key, aws_security_token)
       # support session tokens
       if ENV['AWS_SECURITY_TOKEN'] || aws_security_token
