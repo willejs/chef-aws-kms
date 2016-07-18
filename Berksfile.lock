@@ -1,0 +1,11 @@
+DEPENDENCIES
+  aws-kms
+    path: .
+    metadata: true
+  custom_resource_test
+    path: test/fixtures/cookbooks/custom_resource_test
+
+GRAPH
+  aws-kms (0.0.1)
+  custom_resource_test (0.0.1)
+    aws-kms (>= 0.0.0)

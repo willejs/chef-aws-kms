@@ -1,0 +1,2 @@
+.kitchen/*
+test/fixtures/cookbooks/custom_resource_test/files/crypt/test_data.crypt

@@ -1,0 +1,11 @@
+DEPENDENCIES
+  aws-kms
+    path: ../../../..
+  custom_resource_test
+    path: .
+    metadata: true
+
+GRAPH
+  aws-kms (0.0.1)
+  custom_resource_test (0.0.1)
+    aws-kms (>= 0.0.0)
