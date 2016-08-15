@@ -1,5 +1,5 @@
 module AwsKmsCookbook
-  # Create a class and define the openvpn_server resource in this library
+  # Create a class and define the aws_kms resource in this library
   class AwsKms < Chef::Resource
     require_relative 'helpers'
     include AwsKmsCookbook::AwsKmsHelpers
